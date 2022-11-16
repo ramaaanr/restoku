@@ -1,0 +1,44 @@
+@use "base";
+@use "skip-content";
+@use "header";
+@use "hero";
+@use "intro-container";
+@use "main-content-container";
+@use "restaurant-item";
+@use "footer";
+@use "detail-pages";
+@use "loading";
+@use 'variables'as var;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  overflow-x: hidden;
+  color: var.$text-color-dark;
+}
+
+input,
+input:focus {
+  background-color: inherit;
+  border: inherit;
+  outline: none;
+}
+
+main {
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+@media screen and (min-width:1200px) {
+  main {
+    width: 1000px;
+  }
+}

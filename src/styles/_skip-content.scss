@@ -1,0 +1,20 @@
+@use 'variables' as var;
+@use 'mixin';
+
+.skip-to-content {
+    @include mixin.flex-box();  
+    position: absolute;
+    z-index: 1000;
+    top: -44px;
+    left: 0;
+    height: auto;
+    text-decoration: underline;
+    width: 200px;
+    height: 44px;
+    background-color: blue;
+    color: var.$text-color-light;
+    
+    &:focus {
+        top: 0;
+    }
+}

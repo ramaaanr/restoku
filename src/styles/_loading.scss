@@ -1,0 +1,11 @@
+@use 'variables'as var;
+
+.loading-container {
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: var.$fourth-color;
+  }
+}

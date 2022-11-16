@@ -1,0 +1,13 @@
+@use 'variables' as var;
+@use 'mixin';
+
+footer {
+    background-color: var.$primary-color;
+    padding: 5px 0;
+    @include mixin.flex-box;
+     p {
+        width: auto;
+        font-size: 1rem;
+        color: var.$text-color-light;
+     }
+}

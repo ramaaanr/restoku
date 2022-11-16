@@ -1,0 +1,48 @@
+@use 'variables' as var;
+@use 'mixin';
+
+.intro-container {
+    padding: 0 1rem;
+    margin: 2rem 0;
+
+    @include mixin.flex-box(center, center, column);
+
+    .intro-headline {
+        padding: .5rem;
+        width: 100%;
+        height: auto;
+        @include mixin.flex-box();
+        * {
+            margin: 0 .5rem;
+        }
+        
+        .intro-title {
+            font-size: 1.5em;
+            color: var.$fourth-color;
+        }
+
+    }
+
+    .intro-tagline {
+        text-align: center;
+        font-size: .8em;
+    }
+    @media screen and (min-width: 700px) {
+        & {
+            padding: 0 3rem;
+        }
+    }
+    @media screen and (min-width: 900px) {
+        & {
+            margin: 4rem 0;
+            font-size: 2rem;
+            @include mixin.flex-box(center, center, row);
+            .intro-tagline {
+                text-align: left;
+            }
+        }
+
+    }
+
+
+}
