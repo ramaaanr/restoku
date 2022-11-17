@@ -31,9 +31,9 @@ const createRestaurantDetail = (restaurant) => `
         <img tabindex="0" aria-label="tombol-kembali" src=" public/icons/arrow-back.svg" alt="tombol-kembali">
       </a>
     </button>
-    <button class="button-favorite">
+    <div id="likeButtonContainer">
       
-    </button>
+    </div>
   </div>
 
   <div class="main-content-detail-body">
@@ -98,12 +98,16 @@ const createCustomerReviewItem = (review) => `
   </li>
 `;
 
-const createFavoriteButtonTemplate = () => `
-  <img tabindex="0" aria-label="tombol-restoran-favorite" src=" public/icons/favorite.svg" alt="tombol-restoran-favorite"></img>
-`;
+const createLikeButtonTemplate = () => `
+  <button tabindex="0" aria-label="like-restaurant-button" id="favoriteButton">
+    <img src=" public/icons/favorite.svg" alt="tombol-restoran-favorite"></img>
+  </button>
+  `;
 
-const createFavoritedButtonTemplate = () => `
-  <img tabindex="0" aria-label="tombol-restoran-favorited" src=" public/icons/favorite-fill.svg" alt="tombol-restoran-favorite"></img>
+const createUnlikeButtonTemplate = () => `
+  <button tabindex="0" aria-label="unlike-restaurant-button" id="favoritedButton">
+    <img src=" public/icons/favorite-fill.svg" alt="tombol-restoran-favorited"></img>
+  </button>
 `;
 
 const createLoading = () => `
@@ -122,8 +126,8 @@ export {
   createRestaurantItem,
   createDetailListItem,
   createRestaurantDetail,
-  createFavoriteButtonTemplate,
-  createFavoritedButtonTemplate,
+  createLikeButtonTemplate,
+  createUnlikeButtonTemplate,
   createCustomerReviewItem,
   createLoading,
   createEmptyRestaurant,
