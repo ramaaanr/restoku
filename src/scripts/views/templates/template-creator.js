@@ -31,9 +31,9 @@ const createRestaurantDetail = (restaurant) => `
         <img tabindex="0" aria-label="tombol-kembali" src=" public/icons/arrow-back.svg" alt="tombol-kembali">
       </a>
     </button>
-    <button class="button-favorite">
+    <div id="likeButtonContainer">
       
-    </button>
+    </div>
   </div>
 
   <div class="main-content-detail-body">
@@ -106,7 +106,7 @@ const createLikeButtonTemplate = () => `
 
 const createUnlikeButtonTemplate = () => `
   <button tabindex="0" aria-label="unlike-restaurant-button" id="favoritedButton">
-    <img src=" public/icons/favorited.svg" alt="tombol-restoran-favorited"></img>
+    <img src=" public/icons/favorite-fill.svg" alt="tombol-restoran-favorited"></img>
   </button>
 `;
 

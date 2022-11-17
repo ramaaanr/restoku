@@ -2,13 +2,15 @@
 import DataSource from '../../data/data-source';
 import UrlParser from '../../routes/url-parser';
 import addReviewInitiator from '../../utils/add-review-initiator';
-import favoriteButtonInitiator from '../../utils/favorite-button-initiator';
+import favoriteButtonPresenter from '../../presenter/like-button-presenter';
+
 import {
   createCustomerReviewItem,
   createDetailListItem,
   createLoading,
   createRestaurantDetail,
 } from '../templates/template-creator';
+import FavoriteRestaurantsIdb from '../../data/favorite-restaurants-idb';
 
 const Detail = {
   async render() {
@@ -34,9 +36,10 @@ const Detail = {
     this.renderListItem('drinks', restaurant.menus.drinks);
 
     this.renderReviewItems(restaurant.customerReviews);
-    favoriteButtonInitiator.init({
-      favoriteButton: $('.button-favorite'),
+    favoriteButtonPresenter.init({
+      favoriteButton: document.querySelector('#likeButtonContainer'),
       restaurant,
+      favoriteRestaurant: FavoriteRestaurantsIdb,
     });
 
     addReviewInitiator.init({
