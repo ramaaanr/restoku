@@ -19,7 +19,7 @@ const addReviewInitiator = {
   },
 
   _submitReviewHandler() {
-    this._buttonSubmit.on('click', async () => {
+    this._buttonSubmit.addEventListener('click', async () => {
       const name = this._inputAuthor.val();
       const review = this._inputReview.val();
       if (this._isInputExist(name, review)) {

@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import 'regenerator-runtime'; /* for async await transpile */
-import 'jquery';
 import '../styles/main.scss';
 import App from './views/app';
 import swRegister from './utils/sw-register';
@@ -13,9 +12,9 @@ import './views/components/navbar';
 
 // eslint-disable-next-line no-unused-vars
 const app = new App({
-  button: $('.menu-open, .menu-close'),
-  drawer: $('nav'),
-  content: $('main'),
+  button: document.querySelector('.menu-open, .menu-close'),
+  drawer: document.querySelector('nav'),
+  content: document.querySelector('main'),
 });
 
 window.addEventListener('hashchange', () => {

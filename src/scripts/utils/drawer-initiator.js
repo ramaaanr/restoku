@@ -6,7 +6,7 @@ const drawerInitiator = {
     });
 
     // eslint-disable-next-line no-undef
-    $('.nav-anchor').on('click', () => {
+    document.querySelector('.nav-anchor').addEventListener('click', () => {
       this._toggleDrawer(button, drawer);
     });
   },

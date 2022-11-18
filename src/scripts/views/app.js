@@ -24,8 +24,8 @@ class App {
   // eslint-disable-next-line class-methods-use-this
   _skipContentListener() {
     // eslint-disable-next-line no-undef
-    const skipToContent = $('.skip-to-content');
-    skipToContent.on('click', (event) => {
+    const skipToContent = document.querySelector('.skip-to-content');
+    skipToContent.addEventListener('click', (event) => {
       event.preventDefault();
       document.querySelector('#mainContent').focus();
     });
