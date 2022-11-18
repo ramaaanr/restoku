@@ -118,7 +118,7 @@ const createLoading = () => `
 
 const createEmptyRestaurant = () => `
   <div class='empty-container'>
-    <h1 tabindex="0" aria-label="Restoran kosong">Restaurant List Is Empty</h1>
+    <h1 tabindex="0" class="empty-heading" aria-label="Restoran kosong">Restaurant List Are Empty</h1>
   </div>
 `;
 
