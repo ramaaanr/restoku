@@ -125,6 +125,14 @@ const createEmptyRestaurant = () => `
   </div>
 `;
 
+const createButtonMenuOpen = () => `
+  <img tabindex="0" aria-label="tombol-buka-menu-navigasi" src="public/icons/list.svg" alt="tombol-buka-menu-navigasi">
+`;
+
+const createButtonMenuClose = () => `
+  <img tabindex="0" aria-label="tombol-tutup-menu-navigasi" src=" public/icons/x.svg" alt="tombol-tutup-menu-navigasi">
+`;
+
 export {
   createRestaurantItem,
   createDetailListItem,
@@ -134,4 +142,6 @@ export {
   createCustomerReviewItem,
   createLoading,
   createEmptyRestaurant,
+  createButtonMenuClose,
+  createButtonMenuOpen,
 };

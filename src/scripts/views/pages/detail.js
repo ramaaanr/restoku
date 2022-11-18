@@ -23,14 +23,14 @@ const Detail = {
   },
 
   async renderLoading() {
-    $('.main-content-detail').html(createLoading());
+    document.querySelector('.main-content-detail').innerHTML = createLoading();
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await DataSource.detailRestaurant(url.id);
-    const detailContainer = $('.main-content-detail');
-    detailContainer.html(createRestaurantDetail(restaurant));
+    const detailContainer = document.querySelector('.main-content-detail');
+    detailContainer.innerHTML = createRestaurantDetail(restaurant);
     this.renderListItem('categories', restaurant.categories);
     this.renderListItem('foods', restaurant.menus.foods);
     this.renderListItem('drinks', restaurant.menus.drinks);
@@ -43,22 +43,22 @@ const Detail = {
     });
 
     addReviewInitiator.init({
-      inputAuthor: $('.input-review-author'),
-      inputReview: $('.input-review-text'),
+      inputAuthor: document.querySelector('.input-review-author'),
+      inputReview: document.querySelector('.input-review-text'),
       id: restaurant.id,
-      buttonSubmit: $('.button-submit-review'),
+      buttonSubmit: document.querySelector('.button-submit-review'),
       renderReviewItems: this.renderReviewItems,
     });
   },
 
   renderReviewItems(reviews) {
     // eslint-disable-next-line no-undef
-    const customerReviewsContainer = $('.detail-customer-reviews-list');
+    const customerReviewsContainer = document.querySelector('.detail-customer-reviews-list');
     let reviewItems = '';
     reviews.forEach((review) => {
       reviewItems += createCustomerReviewItem(review);
     });
-    customerReviewsContainer.html(reviewItems);
+    customerReviewsContainer.innerHTML = reviewItems;
   },
 
   renderListItem(label, items) {
@@ -68,12 +68,12 @@ const Detail = {
       drinks: '.detail-drinks',
     };
     // eslint-disable-next-line no-undef
-    const listContainer = $(classLabel[label]);
-    let listItem = listContainer.html();
+    const listContainer = document.querySelector(classLabel[label]);
+    let listItem = listContainer.innerHTML;
     items.forEach((item) => {
       listItem += createDetailListItem(item.name);
     });
-    listContainer.html(listItem);
+    listContainer.innerHTML = listItem;
   },
 };
 

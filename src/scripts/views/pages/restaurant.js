@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import DataSource from '../../data/data-source';
 import { createEmptyRestaurant, createLoading, createRestaurantItem } from '../templates/template-creator';
 // Components
@@ -29,19 +28,20 @@ const Restaurant = {
   },
 
   async renderLoading() {
-    $('.restaurant-card-container').html(createLoading());
+    document.querySelector('.restaurant-card-container').innerHTML = createLoading();
   },
 
   async afterRender() {
     await this.renderRestaurantItem();
-    $('.input-search').on('input', async () => {
-      const search = $('.input-search').val();
+    document.querySelector('.input-search').addEventListener('input', async () => {
+      const search = document.querySelector('.input-search').val;
       await this.renderRestaurantItem(search);
     });
   },
 
   async renderRestaurantItem(search = '') {
     const restaurants = await DataSource.restaurantList();
+    console.log(restaurants);
 
     let restaurantItems = '';
     let itemsEmpty = true;
@@ -52,9 +52,9 @@ const Restaurant = {
       }
     });
     if (itemsEmpty) {
-      $('.restaurant-card-container').html(createEmptyRestaurant());
+      document.querySelector('.restaurant-card-container').innerHTML = createEmptyRestaurant();
     } else {
-      $('.restaurant-card-container').html(restaurantItems);
+      document.querySelector('.restaurant-card-container').innerHTML = restaurantItems;
     }
   },
 };

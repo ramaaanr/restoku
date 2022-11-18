@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import FavoriteRestaurantsIdb from '../../data/favorite-restaurants-idb';
 import { createEmptyRestaurant, createLoading, createRestaurantItem } from '../templates/template-creator';
 // component
@@ -22,16 +21,13 @@ const Favorite = {
   },
 
   async renderLoading() {
-    // eslint-disable-next-line no-undef
-    $('.restaurant-card-container').html(createLoading());
+    document.querySelector('.restaurant-card-container').innerHTML = createLoading();
   },
 
   async afterRender() {
     await this.renderRestaurantItem();
-    // eslint-disable-next-line no-undef
-    $('.input-search').on('input', async () => {
-      // eslint-disable-next-line no-undef
-      const search = $('.input-search').val();
+    document.querySelector('.input-search').addEventListener('input', async () => {
+      const search = document.querySelector('.input-search').value;
       await this.renderRestaurantItem(search);
     });
   },
@@ -47,9 +43,9 @@ const Favorite = {
       }
     });
     if (itemsEmpty) {
-      $('.restaurant-card-container').html(createEmptyRestaurant());
+      document.querySelector('.restaurant-card-container').innerHTML = createEmptyRestaurant();
     } else {
-      $('.restaurant-card-container').html(restaurantItems);
+      document.querySelector('.restaurant-card-container').innerHTML = restaurantItems;
     }
   },
 };

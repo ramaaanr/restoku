@@ -10,13 +10,9 @@ class NavBar extends HTMLElement {
           <div class="logo">
             <p aria-label="nama-aplikasi" tabindex="0">RestoKu</p>
           </div>
-          <button id="button-open-menu" class="button-menu menu-open show">
+          <button id="button-container" class="button-container">
             <img tabindex="0" aria-label="tombol-buka-menu-navigasi" src="public/icons/list.svg"
               alt="tombol-buka-menu-navigasi">
-          </button>
-          <button id="button-close-menu" class="button-menu menu-close show hide">
-            <img tabindex="0" aria-label="tombol-tutup-menu-navigasi" src=" public/icons/x.svg"
-              alt="tombol-tutup-menu-navigasi">
           </button>
         </div>
         <nav>
