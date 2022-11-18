@@ -4,7 +4,10 @@ import CONFIG from '../../globals/config';
 const createRestaurantItem = (restaurant) => `
     <li tabindex="0" aria-label="data restoran" class="card restaurant restaurant-item">
       <a href="#/detail/${restaurant.id}">
-        <img tabindex="0" aria-label="gambar restoran" class="restaurant-picture" src="${CONFIG.BASE_IMAGE_MEDIUM_URL}${restaurant.pictureId}" alt="Gambar Restoran">
+
+        <!-- Dengan Fitur Lazyload  -->
+        <img tabindex="0" aria-label="gambar restoran" class="lazyload restaurant-picture" data-src="${CONFIG.BASE_IMAGE_MEDIUM_URL}${restaurant.pictureId}" alt="Gambar Restoran">
+        
         <div class="restaurant-details">
           <h3 tabindex="0" aria-label="Nama Restoran yaitu ${restaurant.name}" class="name">${restaurant.name}</h3>
           <div class="info">
