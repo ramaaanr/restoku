@@ -17,9 +17,10 @@ header {
             font-weight: bold;
         }
 
-        .button-menu {
+        .button-container {
             width: 44px;
             height: 44px;
+            padding: 3px;
 
             img {
                 height: 100%;
@@ -57,7 +58,7 @@ header {
             justify-content: center;
             background-color: var.$secondary-color;
             width: 100vw;
-            height: calc(100vh - 48px);
+            height: calc(100vh);
 
             li {
                 height: auto;
@@ -138,21 +139,4 @@ header {
             }
         }
     }
-
-    // @media screen and (min-width: 700px) {
-    //     & {
-    //         background-color: red;
-
-    //         .heading {
-
-    //             background-color: inherit;
-    //         }
-
-    //         nav {
-    //             position: static;
-    //             transform: translateX(0); 
-    //             background-color: inherit;
-    //         }
-    //     }
-    // }
 }

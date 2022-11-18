@@ -68,8 +68,8 @@ const Detail = {
       drinks: '.detail-drinks',
     };
     // eslint-disable-next-line no-undef
-    const listContainer = documentq.querySelector(classLabel[label]);
-    let listItem = listContainer.html();
+    const listContainer = document.querySelector(classLabel[label]);
+    let listItem = listContainer.innerHTML;
     items.forEach((item) => {
       listItem += createDetailListItem(item.name);
     });

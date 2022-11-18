@@ -41,6 +41,7 @@ const Restaurant = {
 
   async renderRestaurantItem(search = '') {
     const restaurants = await DataSource.restaurantList();
+    console.log(restaurants);
 
     let restaurantItems = '';
     let itemsEmpty = true;

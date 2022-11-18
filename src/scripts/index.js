@@ -12,7 +12,7 @@ import './views/components/navbar';
 
 // eslint-disable-next-line no-unused-vars
 const app = new App({
-  button: document.querySelector('.menu-open, .menu-close'),
+  button: document.querySelector('#button-container'),
   drawer: document.querySelector('nav'),
   content: document.querySelector('main'),
 });
