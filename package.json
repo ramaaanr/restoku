@@ -50,7 +50,6 @@
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
     "whatwg-fetch": "^3.6.2",
-    "workbox-precaching": "^6.5.3",
     "workbox-webpack-plugin": "^6.5.3"
   },
   "dependencies": {
@@ -59,6 +58,7 @@
     "regenerator-runtime": "^0.13.9",
     "resolve-url-loader": "^5.0.0",
     "sweetalert2": "^11.6.6",
+    "workbox-precaching": "^6.5.4",
     "workbox-window": "^6.5.3"
   }
 }

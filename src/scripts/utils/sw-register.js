@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import * as WorkboxWindow from 'workbox-window';
+import { Workbox } from 'workbox-window';
 
 const swRegister = async () => {
   if (!('serviceWorker' in navigator)) {
@@ -11,7 +11,8 @@ const swRegister = async () => {
     return;
   }
 
-  const wb = new WorkboxWindow.Workbox('/sw.bundle.js');
+  const wb = new Workbox('/sw.bundle.js');
+
   try {
     await wb.register();
   } catch (error) {
