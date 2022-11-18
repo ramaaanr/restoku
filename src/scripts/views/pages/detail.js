@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 import DataSource from '../../data/data-source';
 import UrlParser from '../../routes/url-parser';
@@ -5,9 +6,9 @@ import addReviewInitiator from '../../utils/add-review-initiator';
 import favoriteButtonPresenter from '../../presenter/like-button-presenter';
 
 import {
-  createCustomerReviewItem,
   createDetailListItem,
   createLoading,
+  createCustomerReviewItem,
   createRestaurantDetail,
 } from '../templates/template-creator';
 import FavoriteRestaurantsIdb from '../../data/favorite-restaurants-idb';
@@ -35,7 +36,7 @@ const Detail = {
     this.renderListItem('foods', restaurant.menus.foods);
     this.renderListItem('drinks', restaurant.menus.drinks);
 
-    this.renderReviewItems(restaurant.customerReviews);
+    this._renderReviewItems(restaurant.customerReviews);
     favoriteButtonPresenter.init({
       favoriteButton: document.querySelector('#likeButtonContainer'),
       restaurant,
@@ -47,11 +48,11 @@ const Detail = {
       inputReview: document.querySelector('.input-review-text'),
       id: restaurant.id,
       buttonSubmit: document.querySelector('.button-submit-review'),
-      renderReviewItems: this.renderReviewItems,
     });
   },
 
-  renderReviewItems(reviews) {
+  // eslint-disable-next-line no-underscore-dangle
+  async _renderReviewItems(reviews) {
     // eslint-disable-next-line no-undef
     const customerReviewsContainer = document.querySelector('.detail-customer-reviews-list');
     let reviewItems = '';
