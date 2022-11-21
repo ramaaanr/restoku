@@ -33,6 +33,7 @@ const Favorite = {
   },
 
   async renderRestaurantItem(search = '') {
+    this.renderLoading();
     const restaurants = await FavoriteRestaurantsIdb.getAllRestaurants();
     let restaurantItems = '';
     let itemsEmpty = true;
