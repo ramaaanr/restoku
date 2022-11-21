@@ -27,7 +27,7 @@ const Restaurant = {
     `;
   },
 
-  async renderLoading() {
+  renderLoading() {
     document.querySelector('.restaurant-card-container').innerHTML = createLoading();
   },
 
@@ -41,6 +41,7 @@ const Restaurant = {
   },
 
   async renderRestaurantItem(search = '') {
+    this.renderLoading();
     const restaurants = await DataSource.restaurantList();
     console.log(restaurants);
     let restaurantItems = '';

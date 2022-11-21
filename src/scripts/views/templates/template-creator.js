@@ -115,7 +115,20 @@ const createUnlikeButtonTemplate = () => `
 
 const createLoading = () => `
   <div class="loading-container">
-    <h1 tabindex="0" aria-label="sedang loading mohon tunggu..." >LOADING ...</h1>
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 `;
 
