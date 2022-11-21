@@ -33,8 +33,9 @@ const Restaurant = {
 
   async afterRender() {
     await this.renderRestaurantItem();
-    document.querySelector('.input-search').addEventListener('input', async () => {
-      const search = document.querySelector('.input-search').val;
+    document.querySelector('.input-search').addEventListener('input', async (event) => {
+      event.preventDefault();
+      const search = document.querySelector('.input-search').value;
       await this.renderRestaurantItem(search);
     });
   },
@@ -42,7 +43,6 @@ const Restaurant = {
   async renderRestaurantItem(search = '') {
     const restaurants = await DataSource.restaurantList();
     console.log(restaurants);
-
     let restaurantItems = '';
     let itemsEmpty = true;
     restaurants.forEach((restaurant) => {

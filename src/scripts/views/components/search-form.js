@@ -5,9 +5,9 @@ class SearchForm extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <form class="search search-form">
+      <div class="search search-form">
           <input placeholder="find your restaurant..." type="text" class="input-search">
-      </form>
+      </div>
     `;
   }
 }
