@@ -1,8 +1,8 @@
 {
   "id": "restaurant-app-lite-pwa-1",
   "start_url": "./index.html",
-  "name": "Restoku Lite: Restaurant App",
-  "short_name": "Restoku Lite",
+  "name": "Restoku: Restaurant App",
+  "short_name": "Restoku",
   "description": "Your favorite restaurant finder app",
   "display": "standalone",
   "background_color": "#FFFFFF",
@@ -55,6 +55,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/public/icons/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
