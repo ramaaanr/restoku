@@ -34,7 +34,10 @@ class App {
   async renderPage() {
     window.scrollTo(0, 0);
     const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url];
+    let page = routes[url];
+    if (typeof page === 'undefined') {
+      page = routes['/page-not-found'];
+    }
     this._content.innerHTML = await page.render();
     await page.afterRender();
     this._skipContentListener();

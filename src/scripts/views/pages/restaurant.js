@@ -43,7 +43,6 @@ const Restaurant = {
   async renderRestaurantItem(search = '') {
     this.renderLoading();
     const restaurants = await DataSource.restaurantList();
-    console.log(restaurants);
     let restaurantItems = '';
     let itemsEmpty = true;
     restaurants.forEach((restaurant) => {
