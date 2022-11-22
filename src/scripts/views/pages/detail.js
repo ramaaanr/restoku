@@ -29,7 +29,11 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await DataSource.detailRestaurant(url.id);
+    const response = await DataSource.detailRestaurant(url.id);
+    if (response.error) {
+      window.location.href = '/#/page-not-found';
+    }
+    const { restaurant } = response;
     const detailContainer = document.querySelector('.main-content-detail');
     detailContainer.innerHTML = createRestaurantDetail(restaurant);
     this.renderListItem('categories', restaurant.categories);

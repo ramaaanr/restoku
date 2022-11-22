@@ -10,7 +10,7 @@ class DataSource {
   static async detailRestaurant(id) {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     const responseJson = await response.json();
-    return responseJson.restaurant;
+    return responseJson;
   }
 
   // eslint-disable-next-line consistent-return
