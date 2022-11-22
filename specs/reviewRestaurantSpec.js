@@ -30,7 +30,7 @@ describe('Review a Restaurant', () => {
     addReviewContainer();
   });
 
-  it('should have restaurant review id, name, review value', async () => {
+  it('should add review in input containing name, text, and id', async () => {
     addFormInput('test', 'test');
     createAddReviewInitiatorWithRestaurant({ id: 1 });
 
@@ -38,7 +38,7 @@ describe('Review a Restaurant', () => {
     expect(document.querySelector('.input-review-text').value).toBe('test');
   });
 
-  it('should have valid restaurant id', async () => {
+  it('should review will not be added if id is not available', async () => {
     addFormInput('test-author', 'test-text');
     await createAddReviewInitiatorWithRestaurant({ id: ' ' });
     document.querySelector('.button-submit-review').dispatchEvent(new Event('click'));
@@ -47,7 +47,7 @@ describe('Review a Restaurant', () => {
     }, 1000);
   });
 
-  it('should contain name', async () => {
+  it('should the review will not be added if the name is not filled', async () => {
     addFormInput('', 'test-text');
     await createAddReviewInitiatorWithRestaurant({ id: 'w7jca3irwykfw1e867' });
     document.querySelector('.button-submit-review').dispatchEvent(new Event('click'));
@@ -56,7 +56,7 @@ describe('Review a Restaurant', () => {
     }, 1000);
   });
 
-  it('should contain review', async () => {
+  it('should the review will not be added if the review body/text is not filled', async () => {
     addFormInput('test-name', '');
     await createAddReviewInitiatorWithRestaurant({ id: 'w7jca3irwykfw1e867' });
     document.querySelector('.button-submit-review').dispatchEvent(new Event('click'));
@@ -65,7 +65,7 @@ describe('Review a Restaurant', () => {
     }, 1000);
   });
 
-  it('should succes', async () => {
+  it('should be able to store review data name, id, and texts', async () => {
     addFormInput('test-name', 'test-author');
     await createAddReviewInitiatorWithRestaurant({ id: 'w7jca3irwykfw1e867' });
     document.querySelector('.button-submit-review').dispatchEvent(new Event('click'));
