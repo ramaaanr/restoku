@@ -4,7 +4,8 @@ const { merge } = require('webpack-merge');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const { InjectManifest } = require('workbox-webpack-plugin');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const common = require('./webpack.common');
@@ -25,6 +26,9 @@ module.exports = merge(common, {
             },
           },
         ],
+      },
+      {
+        test: /\.scss$/,
       },
     ],
   },
@@ -58,6 +62,7 @@ module.exports = merge(common, {
   },
   plugins: [
     // new BundleAnalyzerPlugin(),
+    new MiniCssExtractPlugin(),
     new InjectManifest({
       swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
       swDest: './sw.bundle.js',
