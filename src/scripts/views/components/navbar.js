@@ -7,9 +7,9 @@ class NavBar extends HTMLElement {
     this.innerHTML = `
       <header>
         <div class="heading">
-          <div class="logo">
-            <p aria-label="nama-aplikasi" tabindex="0">RestoKu</p>
-          </div>
+          <a class="logo" href='/'>
+            <img aria-label="logo-restoku" tabindex="0" src="public/icons/restoku_logo.png">
+          </a>
           <button id="button-container" class="button-container">
             <img tabindex="0" aria-label="tombol-buka-menu-navigasi" src="public/icons/list.svg"
               alt="tombol-buka-menu-navigasi">
