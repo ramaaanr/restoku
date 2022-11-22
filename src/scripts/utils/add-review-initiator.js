@@ -6,7 +6,7 @@ import {
 
 /* eslint-disable no-underscore-dangle */
 const addReviewInitiator = {
-  init({
+  async init({
     inputAuthor,
     inputReview,
     id,
@@ -16,10 +16,10 @@ const addReviewInitiator = {
     this._inputReview = inputReview;
     this._id = id;
     this._buttonSubmit = buttonSubmit;
-    this._submitReviewHandler();
+    await this._submitReviewHandler();
   },
 
-  _submitReviewHandler() {
+  async _submitReviewHandler() {
     this._buttonSubmit.addEventListener('click', async (event) => {
       event.preventDefault();
       const name = this._inputAuthor.value;
@@ -32,7 +32,7 @@ const addReviewInitiator = {
         };
         const response = await DataSource.addReview(dataReview);
         if (await response.error) {
-          Swal.fire({
+          await Swal.fire({
             icon: 'error',
             title: 'Network Problem',
             text: response.message,
@@ -45,7 +45,7 @@ const addReviewInitiator = {
           });
         }
       } else {
-        Swal.fire({
+        await Swal.fire({
           icon: 'error',
           title: 'Input is still empty',
           text: 'please re-enter the input correctly',

@@ -25,10 +25,9 @@ class DataSource {
     const response = await fetch(API_ENDPOINT.REVIEW, options);
     const responseJson = await response.json();
     if (responseJson.error) {
-      throw new Error('The restaurant API is having problems, please try again!');
-    } else {
-      return responseJson.customerReviews;
+      return responseJson;
     }
+    return responseJson.customerReviews;
   }
 }
 

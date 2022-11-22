@@ -2,7 +2,7 @@
 import itActsAsFavoriteRestaurantModel from './contract/favoriteRestaurantContract';
 import FavoriteRestaurantsIdb from '../src/scripts/data/favorite-restaurants-idb';
 
-xdescribe('Restaurant Idb Contract Test Implemementation', () => {
+describe('Restaurant Idb Contract Test Implemementation', () => {
   afterEach(async () => {
     (await FavoriteRestaurantsIdb
       .getAllRestaurants())
