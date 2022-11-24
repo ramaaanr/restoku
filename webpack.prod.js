@@ -61,7 +61,9 @@ module.exports = merge(common, {
     },
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+    }),
     new MiniCssExtractPlugin(),
     new InjectManifest({
       swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
