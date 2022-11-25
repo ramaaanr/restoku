@@ -6,7 +6,7 @@
     height: 100vh;
     margin: 0 auto;
     background-image:
-        url("../public/hero/hero-background.jpg");
+        url("../public/hero/hero-background-large.jpg");
     background-position: center;
     background-size: cover;
     padding: 0 1rem;
@@ -30,10 +30,23 @@
         }
     }
 
+    @media screen and (max-width: 300px) {
+        & {
+            background-image: url("../public/hero/hero-background-small.jpg");
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        & {
+            background-image: url("../public/hero/hero-background-medium.jpg");
+        }
+    }
+
     @media screen and (min-width: 700px) {
         & {
             width: 100vw;
             height: 50vh;
+
         }
     }
 

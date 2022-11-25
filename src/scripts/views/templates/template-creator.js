@@ -7,9 +7,9 @@ const createRestaurantItem = (restaurant) => `
 
         <!-- Dengan Fitur Lazyload  -->
         <picture>
-          <source media="(max-width: 300px)" srcset="${CONFIG.BASE_IMAGE_SMALL_URL}${restaurant.pictureId}">
-          <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_MEDIUM_URL}${restaurant.pictureId}">
-          <img tabindex="0" aria-label="gambar restoran" class="lazyload restaurant-picture" src="${CONFIG.BASE_IMAGE_MEDIUM_URL}${restaurant.pictureId}" alt="Gambar Restoran">
+          <source media="(max-width: 300px)" data-srcset="${CONFIG.BASE_IMAGE_SMALL_URL}${restaurant.pictureId}">
+          <source media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMAGE_MEDIUM_URL}${restaurant.pictureId}">
+          <img tabindex="0" aria-label="gambar restoran" class="lazyload restaurant-picture" data-src="${CONFIG.BASE_IMAGE_MEDIUM_URL}${restaurant.pictureId}" alt="Gambar Restoran">
         </picture>
         <div class="restaurant-details">
           <h3 tabindex="0" aria-label="Nama Restoran yaitu ${restaurant.name}" class="name">${restaurant.name}</h3>
@@ -28,24 +28,34 @@ const createRestaurantItem = (restaurant) => `
   `;
 
 const createRestaurantDetail = (restaurant) => `
-  <div class="main-content-detail-image" style="
-    background: url('${CONFIG.BASE_IMAGE_LARGE_URL}${restaurant.pictureId}');
-    @media (max-width:600px){
-      background: url('${CONFIG.BASE_IMAGE_MEDIUM_URL}${restaurant.pictureId}');
+  <style>
+    .main-content-detail-image {
+      background: url('${CONFIG.BASE_IMAGE_LARGE_URL}${restaurant.pictureId}');
+      background-position: center;
+      background-size: cover;
     }
-    @media (max-width:300px){
-      background: url('${CONFIG.BASE_IMAGE_SMALL_URL}${restaurant.pictureId}');
-    }
-    background-position: center;
-    background-size: cover;
+    @media screen and (max-width: 600px){
+      .main-content-detail-image {
+        background: url('${CONFIG.BASE_IMAGE_MEDIUM_URL}${restaurant.pictureId}');
+        background-position: center;
+        background-size: cover;
+      }
+    };
+    @media screen and (max-width: 300px){
+      .main-content-detail-image {
+        background: url('${CONFIG.BASE_IMAGE_SMALL_URL}${restaurant.pictureId}');
+        background-position: center;
+        background-size: cover;
+      }
+    };
+  </style>
+  <div class="main-content-detail-image">
     <button class="button-back">
       <a href="#">
         <img tabindex="0" aria-label="tombol-kembali" src=" public/icons/arrow-back.svg" alt="tombol-kembali">
       </a>
     </button>
-    <div id="likeButtonContainer">
-      
-    </div>
+    <div id="likeButtonContainer"></div>
   </div>
 
   <div class="main-content-detail-body">
